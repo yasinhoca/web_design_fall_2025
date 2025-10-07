@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+    GET yöntemi bir kaynaktan belirli bir veri istemek için kullanılır.
+    GET yöntemi en yaygın kullanılan HTTP yöntemlerinden biridir.
+    GET istekleri tarayıcı ön belleğine alınabilir.
+    GET istekleri tarayıcı geçmişinde kalır.
+    Bir URL'nin uzunluğu sınırlıdır (2048 karakter)
+    Hassas data ve veriler ile uğraşırken GET isteği kesinlikle tercih edilmemelidir. POST methodu kullanılmalıdır.
+    GET yöntemi genellikle sorgu dizeleri gibi güvenlik sorunu olmayan veriler için kullanımı uygundur.
+    GET istekleri sadece veri istemek için kullanılır.
+-->
+  
+<form action="post.php" target="_self" method="get"></form>
+
+ <!-- 
+    POST yöntemi en yaygın kullanılan HTTP yöntemlerinden biridir.
+    POST istekleri tarayıcı ön belleğinde ve geçmişinde asla kalmaz.
+    POST yöntemi ile gönderilen form verileri kesinlikle URL'de gösterilmez.
+    POST istekleri işaretlenmez.
+    Hassas içerikler ve veriler üzerinde uğraşırken POST methodu kullanılmalıdır..
+-->
+  
+<form action="post.php" target="_self" method="post"></form>
+                        
+
+</body>
+</html>
