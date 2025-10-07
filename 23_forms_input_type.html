@@ -3,41 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        fieldset{
+            margin: 10px;
+            padding: 20px;
+
+        }
+    </style>
 </head>
 <body>
 
+<form>
 <fieldset>
   <legend>Select a maintenance drone:</legend>
   <div>
-    <input type="radio" id="h" name="drone" value="Sarı" checked />
+    <input type="checkbox" id="h" name="drone" value="Sarı" checked />
     <label for="h">Sarı</label>
   </div>
   <div>
-    <input type="radio" id="d" name="drone" value="Lacivert" />
+    <input type="checkbox" id="d" name="drone" value="Lacivert" />
     <label for="d">Lacivert</label>
   </div>
   <div>
-    <input type="radio" id="l" name="drone" value="Mor" />
+    <input type="checkbox" id="l" name="drone" value="Mor" />
     <label for="l">Mor</label>
   </div>
 </fieldset>
+</form>
 
   
   
-  
- <label for="points">Points (between 0 and 10):</label>
-<input type="range" id="points" name="points" min="0" max="10"> 
+  <form>
+      <fieldset>
+ <label for="points">Points (between 0 and 100):</label>
+<input type="range" id="points" name="points" min="0" max="100">
+      </fieldset>
+  </form>
 
 <form action="/action_page.php">
+    <fieldset>
   <label for="favcolor">Select your favorite color:</label>
-  <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+  <input type="color" id="favcolor" name="favcolor" value="#000000"><br><br>
   <input type="submit">
+    </fieldset>
 </form>
 
 <form action="/action_page.php">
+    <fieldset>
   <label for="birthdaytime">Birthday (date and time):</label>
   <input type="datetime-local" id="birthdaytime" name="birthdaytime">
   <input type="submit">
+    </fieldset>
 </form>
 
 </body>
