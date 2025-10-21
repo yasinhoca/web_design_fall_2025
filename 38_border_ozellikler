@@ -16,6 +16,7 @@ p.bir {
 p.iki{
     border-style: solid;
     border-width: medium;
+     border-radius: 4px;
 }
 
 p.uc{
