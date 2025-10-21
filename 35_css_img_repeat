@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    background-image: url("/img/yatay-bg.jpg");
+    background-repeat: repeat-x;
+
+    /*background-image: url("/img/dikey-bg.jpg");
+    background-repeat: repeat-y;
+    padding-left:100px */
+
+    /*
+    background-repeat:no-repeat; */
+}
+h1{
+    color:#ffffff;
+}
+</style>
+</head>
+<body>
+
+<h1>Merhaba CSS!</h1>
+<p>Arkaplan resmi sadece yatayda tekrar edecektir.</p>
+
+</body>
+</html> 
