@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    background-image: url("/img/agac.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-right: 200px;
+}
+</style>
+</head>
+<body>
+
+<h1>Merhaba CSS!</h1>
+<p>Arkaplan resmi no-repeat olarak ayarland. Yani tekrar etmeyecek</p>
+<p>Aynı zamanda arkaplan resmi sağ üst köşeye konumlandırıldı.</p>
+<p>
+Bu örnekte sayfanın sağ tarafında margin-right ile 200px boşluk bırakıldı.
+</p>
+
+</body>
+</html>   
