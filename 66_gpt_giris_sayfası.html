@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Giriş — Responsive Sayfa</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --accent:#6ee7b7;
+            --muted:#94a3b8;
+            --glass: rgba(255,255,255,0.04);
+            --radius:14px;
+            font-size:16px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;}
+        body{
+            margin:0;
+            font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
+            radial-gradient(800px 500px at 90% 90%, rgba(124,58,237,0.04), transparent),
+            var(--bg);
+            color:#e6eef8;
+            -webkit-font-smoothing:antialiased;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:32px;
+        }
+
+        .container{
+            width:100%;
+            max-width:980px;
+            display:grid;
+            grid-template-columns: 1fr 420px;
+            gap:28px;
+            align-items:center;
+        }
+
+        /* Left - informational */
+        .hero{
+            padding:36px;
+            border-radius:var(--radius);
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+            min-height:320px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            gap:18px;
+        }
+        .logo{display:flex;gap:12px;align-items:center}
+        .logo .mark{
+            width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+            display:flex;align-items:center;justify-content:center;color:#072; font-weight:700;
+        }
+        h1{margin:0;font-size:28px}
+        p.lead{margin:0;color:var(--muted);max-width:46ch}
+
+        /* Right - form card */
+        .card{
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding:28px;border-radius:16px;box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+        }
+        form{display:flex;flex-direction:column;gap:12px}
+        label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+        input[type="text"], input[type="password"], input[type="email"]{
+            width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit;outline:none;font-size:15px
+        }
+        input:focus{box-shadow:0 6px 18px rgba(110,231,183,0.06);border-color:rgba(110,231,183,0.18)}
+
+        .row{display:flex;gap:12px;align-items:center}
+        .row .left{flex:1}
+        .actions{display:flex;gap:12px;align-items:center;margin-top:6px}
+
+        .btn{
+            border:0;padding:12px 16px;border-radius:12px;font-weight:600;cursor:pointer;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#061018;
+        }
+        .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+        .muted{color:var(--muted);font-size:13px}
+        .link{color:var(--accent);text-decoration:none;font-weight:600}
+
+        .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+
+        .helper{font-size:13px;color:var(--muted)}
+
+        /* small text under inputs */
+        .error{color:#ffb4b4;font-size:13px}
+
+        /* responsive */
+        @media (max-width:880px){
+            .container{grid-template-columns:1fr;max-width:720px}
+        }
+        @media (max-width:520px){
+            body{padding:18px}
+            .container{gap:18px}
+            .hero{padding:20px}
+            .card{padding:18px}
+            h1{font-size:22px}
+        }
+
+        /* small utility */
+        .show-pass{display:inline-flex;gap:8px;align-items:center;font-size:13px}
+    </style>
+</head>
+<body>
+<main class="container" role="main">
+    <section class="hero" aria-hidden="false">
+        <div class="logo">
+            <div class="mark">GC</div>
+            <div>
+                <div style="font-weight:700">Code Cube</div>
+                <div style="font-size:13px;color:var(--muted)">Güvenli giriş paneli</div>
+            </div>
+        </div>
+        <h1>Hoş geldiniz — Devam etmek için giriş yapın</h1>
+        <p class="lead">Responsive, erişilebilir ve modern bir giriş formu örneğidir. E-posta veya kullanıcı adı ile giriş yapabilirsiniz. Mobil ve masaüstünde güzel görünür.</p>
+    </section>
+
+    <aside class="card" aria-labelledby="login-heading">
+        <h2 id="login-heading" style="margin:0 0 8px 0">Giriş Yap</h2>
+        <form id="loginForm" novalidate>
+            <div>
+                <label for="user">Kullanıcı adı veya e‑posta</label>
+                <input id="user" name="user" type="text" inputmode="email" placeholder="örn. mail@ornek.com veya kodcu" autocomplete="username" required aria-required="true">
+                <div class="error" id="userError" aria-live="polite"></div>
+            </div>
+
+            <div>
+                <label for="password">Şifre</label>
+                <div style="position:relative;display:flex;align-items:center;gap:8px">
+                    <input id="password" name="password" type="password" placeholder="Şifreniz" autocomplete="current-password" required aria-required="true" style="flex:1">
+                    <button type="button" id="togglePass" aria-pressed="false" title="Şifreyi göster/gizle" class="btn secondary" style="padding:8px 10px;border-radius:10px;background:transparent;color:var(--muted);">Göst

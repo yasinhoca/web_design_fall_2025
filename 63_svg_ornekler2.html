@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+    <polygon points="0,0 80,120 -80,120" fill="#234236" />
+    <polygon points="0,-40 60,60 -60,60" fill="#0C5C4C" />
+    <polygon points="0,-80 40,0 -40,0" fill="#38755B" />
+    <rect x="-20" y="120" width="40" height="30" fill="brown" />
+</svg>
+
+
+<svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
+    <circle class="body" cx="0" cy="-50" r="30" />
+
+    <circle class="eye" cx="-12" cy="-55" r="3" />
+    <circle class="eye" cx="12" cy="-55" r="3" />
+    <rect class="mouth" x="-10" y="-40" width="20" height="5" rx="2" />
+
+    <line class="limb" x1="-40" y1="-10" x2="40" y2="-10" />
+    <line class="limb" x1="-25" y1="50" x2="0" y2="-15" />
+    <line class="limb" x1="25" y1="50" x2="0" y2="-15" />
+
+    <circle class="button" cx="0" cy="-10" r="5" />
+    <circle class="button" cx="0" cy="10" r="5" />
+</svg>
+
+
+
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+    <g transform="translate(0 5)">
+        <g>
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+        </g>
+        <g transform="rotate(72)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+        </g>
+        <g transform="rotate(-72)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+        </g>
+        <g transform="rotate(144)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+        </g>
+        <g transform="rotate(-144)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+        </g>
+    </g>
+</svg>
+
+
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+    <defs>
+        <path
+                id="branch"
+                d="
+        M 0 0 L 0 -90
+        M 0 -20 L 20 -34
+        M 0 -20 L -20 -34
+        M 0 -40 L 20 -54
+        M 0 -40 L -20 -54
+        M 0 -60 L 20 -74
+        M 0 -60 L -20 -74"
+                stroke="#E5C39C"
+                stroke-width="5"
+        />
+    </defs>
+
+    <use href="#branch" />
+    <use href="#branch" transform="rotate(60)" />
+    <use href="#branch" transform="rotate(120)" />
+    <use href="#branch" transform="rotate(180)" />
+    <use href="#branch" transform="rotate(240)" />
+    <use href="#branch" transform="rotate(300)" />
+</svg>
+
+
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+    <g stroke="black" stroke-width="2">
+        <circle cx="0" cy="-45" r="7" fill="#4F6D7A" />
+        <circle cx="0" cy="50" r="10" fill="#F79257" />
+        <path
+                d="
+        M -50 40
+        L -50 50
+        L 50 50
+        L 50 40
+        Q 40 40 40 10
+        C 40 -60 -40 -60 -40 10
+        Q -40 40 -50 40"
+                fill="#FDEA96"
+        />
+    </g>
+</svg>
+
+
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+    <defs>
+        <path id="text-arc" d="M 0, 50 A 50 50 0 1 1 1,50" />
+    </defs>
+
+    <text
+            fill="#0c5c4c"
+            font-family="Tahoma"
+            font-size="0.77em"
+            font-weight="bold"
+    >
+        <textPath href="#text-arc">
+            Hayırlı Cumalar! Hayırlı Cumalar! Hayırlı Cumalar!
+        </textPath>
+    </text>
+</svg>
+
+
+
+
+</body>
+</html>

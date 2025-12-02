@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SVG Araba (Düzeltilmiş Konum)</title>
+    <style>
+        body { margin:0; display:flex; align-items:center; justify-content:center; min-height:100vh; background:#eef2f6; }
+        svg { max-width:1000px; width:95%; height:auto; }
+    </style>
+</head>
+<body>
+
+<svg viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" aria-label="Düzeltilmiş araba animasyonu">
+    <defs>
+        <linearGradient id="carGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff7a18"/>
+            <stop offset="1" stop-color="#ff4e50"/>
+        </linearGradient>
+
+        <pattern id="stripe" x="0" y="0" width="60" height="8" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="60" height="8" fill="#0a74ff"/>
+            <rect x="0" y="2" width="30" height="4" fill="#fff"/>
+        </pattern>
+    </defs>
+
+    <!-- Zemin / yol -->
+    <rect x="0" y="140" width="1000" height="60" fill="#2f3b46"/>
+    <rect x="0" y="160" width="1000" height="20" fill="url(#stripe)" opacity="0.95"/>
+    <rect x="0" y="140" width="1000" height="6" fill="#144c3f"/>
+    <rect x="0" y="194" width="1000" height="6" fill="#5c244e"/>
+
+    <!-- Araba grubu: tüm parçalar bu grubun içinde, böylece animateMotion ile düzgün hareket eder -->
+    <g id="car" transform="translate(-220,0)">
+
+        <!-- Gölge (gövdenin altında) -->
+        <ellipse cx="70" cy="165" rx="56" ry="8" fill="rgba(0,0,0,0.18)" />
+
+        <!-- Gövde: x=0,y=88 -> tekerleklerin merkezleri yaklaşık y=150 olacak -->
+        <rect x="0" y="88" rx="12" ry="12" width="140" height="40" fill="url(#carGrad)" />
+        <!-- Üst kabin -->
+        <rect x="22" y="66" rx="8" ry="8" width="78" height="34" fill="#ffba66" />
+        <!-- Cam -->
+        <rect x="30" y="72" width="62" height="20" rx="3" fill="rgba(255,255,255,0.6)" />
+
+        <!-- Far (ön) -->
+        <rect x="140" y="100" width="8" height="8" rx="2" fill="#fff8b3" opacity="0.9" />
+
+        <!-- Tekerlekler: merkezleri car grubuna göre konumlu (y=150 civarı) -->
+        <!-- Arka tekerlek (sol) -->
+        <g id="wheel-back" transform="translate(30,150)">
+            <!-- dış lastik -->
+            <circle r="16" fill="#111" />
+            <!-- jant -->
+            <circle r="7" fill="#666" />
+            <!-- döndürme animasyonu (tekerlek merkezinde döner) -->
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              from="0 0 0"
+                              to="-360 0 0"
+                              dur="0.8s"
+                              repeatCount="indefinite" />
+        </g>
+
+        <!-- Ön tekerlek (sağ) -->
+        <g id="wheel-front" transform="translate(110,150)">
+            <circle r="16" fill="#111" />
+            <circle r="7" fill="#666" />
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              from="0 0 0"
+                              to="-360 0 0"
+                              dur="0.8s"
+                              repeatCount="indefinite" />
+        </g>
+
+    </g>
+
+    <!-- Arabanın hareket yolu -->
+    <path id="motionPath" d="M -220 0 L 1220 0" fill="none" stroke="none"/>
+
+    <!-- animateMotion ile car grubunu yol boyunca yatay taşıyoruz.
+         Burada rotate="0" olduğu için grup dönmüyor, sadece translate oluyor. -->
+    <animateMotion xlink:href="#car" dur="6s" repeatCount="indefinite" rotate="0">
+        <mpath xlink:href="#motionPath" />
+    </animateMotion>
+
+    <!-- Yol çizgilerini hafif kaydırarak hareket hissi -->
+    <g>
+        <rect x="0" y="160" width="1000" height="20" fill="url(#stripe)" opacity="0.12">
+            <animate attributeName="x" from="0" to="-60" dur="0.6s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+</svg>
+
+</body>
+</html>
