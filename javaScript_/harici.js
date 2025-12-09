@@ -1,0 +1,1 @@
+alert("Ben dışardan gelen js içinden yazdırıldım");
