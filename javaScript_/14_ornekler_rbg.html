@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rastgele Renk Değiştirme</title>
+    <style>
+        #kutu {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="kutu"></div>
+
+<button onclick="renkDegistir()">Rengi Değiştir</button>
+
+<script>
+    function renkDegistir() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        document.getElementById("kutu").style.backgroundColor =
+            `rgb(${r}, ${g}, ${b})`;
+    }
+</script>
+
+</body>
+</html>
